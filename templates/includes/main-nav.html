@@ -5,9 +5,9 @@
                 All Products
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="" class="dropdown-item">Candles</a>
-                <a href="" class="dropdown-item ">Diffusers</a>
-                <a href="" class="dropdown-item ">Gifts & Bundles</a>
+                <a href="{% url 'products' %}?category=candles" class="dropdown-item">Candles</a>
+                <a href="{% url 'products' %}?category=diffusers" class="dropdown-item ">Diffusers</a>
+                <a href="{% url 'products' %}?category=gifts-&-bundles" class="dropdown-item ">Gifts & Bundles</a>
                 <a href="{% url 'products' %}" class="dropdown-item">Shop All</a>
             </div>
         </li>
