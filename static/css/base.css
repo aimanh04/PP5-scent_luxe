@@ -19,6 +19,10 @@ body {
     width: 1.5rem;
 }
 
+.bg-custom {
+    background-color: #778899;
+}
+
 .logo-font {
     text-transform: uppercase;
 }
@@ -28,7 +32,7 @@ body {
 }
 
 .shop-now-button {
-    background: black;
+    background: #676767;
     color: white;
     min-width: 260px;
 }
