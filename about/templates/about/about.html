@@ -14,23 +14,21 @@
     <main class="container">
         <div class="row">
             <div class="col text-center mt-3">
-                <h2 class="">About us</h2>
+                <h2>About ScentLuxe</h2>
                 <hr>
             </div>
         </div>
-        <div class="row">
-            <div class="col">
-                {% if "placeholder" in about.profile_image.url %}
-                <img src="{{ MEDIA_URL }}noimage.png"  alt="placeholder image" class="profile-image">
-                {% else %}
-                <img src="{{ about.image.url }}" alt="{{ about.title }}" class="profile-image">
-                {% endif %}
-            </div>
-            <div class="col-8">
-                <!-- About us Title -->
-                <h2>{{ about.title }}</h2>
-                <!-- About us Content -->
-                {{ about.content | safe }}
+        <div class="row justify-content-center">
+            <div class="col-10">
+                <p class="mt-4">
+                    ScentLuxe is a curated collection of luxury candles, thoughtfully crafted to elevate everyday moments. Whether you're looking to enhance your space, unwind after a long day, or find the perfect gift, our candles offer a sensory experience unlike any other.
+                </p>
+                <p>
+                    This site was developed by <strong>Aiman Hawaemanoh</strong> as part of Portfolio Project 5 for Code Institute, with a focus on building a fully functional eCommerce platform from scratch.
+                </p>
+                <img class="card-img-top logo-img" src="/media/scentluxe.png" alt="LuxeScent Logo">
+                <small>Apr. 22, 2025</small>
+                <hr>
             </div>
         </div>
     </main>
