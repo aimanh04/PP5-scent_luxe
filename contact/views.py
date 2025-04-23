@@ -1,24 +1,15 @@
 from django.shortcuts import render, redirect
-from .models import ContactMessage
+from .forms import ContactForm
 from django.contrib import messages
 
 def contact_view(request):
-    if request.method == "POST":
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        subject = request.POST.get('subject')
-        message = request.POST.get('message')
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Thanks for reaching out! We will get back to you soon.')
+            return redirect('contact_page')
+    else:
+        form = ContactForm()
 
-        if name and email and subject and message:
-            ContactMessage.objects.create(
-                name=name,
-                email=email,
-                subject=subject,
-                message=message
-            )
-            messages.success(request, "Thank you for contacting us!")
-            return redirect('contact')
-        else:
-            messages.error(request, "Please fill out all fields.")
-
-    return render(request, 'contact/contact.html')
+    return render(request, 'contact/contact.html', {'form': form})

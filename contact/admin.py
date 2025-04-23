@@ -1,7 +1,6 @@
 from django.contrib import admin
-from .models import ContactMessage
+from .models import Contact
 
-@admin.register(ContactMessage)
+@admin.register(Contact)
 class ContactMessageAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'subject', 'created_at')
-    search_fields = ('name', 'email', 'subject', 'message')
+    list_display = ('email', 'subject', 'created_at', 'read')
