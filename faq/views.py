@@ -1,3 +1,6 @@
 from django.shortcuts import render
+from .models import FAQ
 
-# Create your views here.
+def faq(request):
+    questions = FAQ.objects.all()
+    return render(request, 'faq/faq.html', {'questions': questions})
