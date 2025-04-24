@@ -29,3 +29,19 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+    @property
+    def average_rating(self):
+        reviews = self.reviews.all()
+        if reviews.exists():
+            ratings = sorted([r.rating for r in reviews])
+            n = len(ratings)
+            mid = n // 2
+            if n % 2 == 0:
+                return round((ratings[mid - 1] + ratings[mid]) / 2, 1)
+            else:
+                return float(ratings[mid])
+        return 0
+
+    
