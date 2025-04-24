@@ -40,7 +40,10 @@ def edit_review(request, review_id):
             return redirect('product_detail', product_id=review.product.id)
     else:
         form = ReviewForm(instance=review)
-    return render(request, 'reviews/edit_review.html', {'form': form, 'product': review.product})
+    return render(request, 'reviews/edit_review.html', {
+        'form': form,
+        'product': review.product
+    })
 
 
 @login_required
