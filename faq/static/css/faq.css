@@ -1,0 +1,18 @@
+.btn-link {
+    font-size: 1rem;
+    color: #212529;
+    text-decoration: none;
+}
+
+.btn-link:hover {
+    text-decoration: none;
+    color: #000;
+}
+
+.icon-toggle {
+    transition: transform 0.2s ease;
+}
+
+.collapse.show .icon-toggle {
+    transform: rotate(180deg);
+}

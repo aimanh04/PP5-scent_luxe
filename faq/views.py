@@ -2,5 +2,9 @@ from django.shortcuts import render
 from .models import FAQ
 
 def faq(request):
-    questions = FAQ.objects.all()
-    return render(request, 'faq/faq.html', {'questions': questions})
+    candles = FAQ.objects.filter(category='candles')
+    shipping = FAQ.objects.filter(category='shipping')
+    return render(request, 'faq/faq.html', {
+        'candles': candles,
+        'shipping': shipping,
+    })

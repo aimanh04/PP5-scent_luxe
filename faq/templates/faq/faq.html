@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'faq/css/faq.css' %}">
+{% endblock %}
+
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -11,16 +15,90 @@
 
 {% block content %}
 <div class="overlay"></div>
-<div class="container mt-4 mb-5">
+<div class="container mt-5 mb-5 pb-5">
     <div class="row">
-        <div class="col text-center mt-3">
-            <h2>Frequently Asked Questions</h2>
-            <hr>
+        <div class="col text-center">
+            <h2 class="mb-4">Frequently Asked Questions</h2>
         </div>
     </div>
+
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-10">
+
+            <!-- CANDLES SECTION -->
+            <div class="mb-4">
+                <h5 class="text-uppercase mb-3 border-bottom pb-2">
+                    <i class="fas fa-fire mr-2"></i> Candles
+                </h5>
+                <div class="accordion" id="accordion-candles">
+                    {% for question in candles %}
+                        <div class="border-bottom">
+                            <h6 class="mb-0">
+                                <button class="btn btn-link d-flex justify-content-between align-items-center w-100 py-3 px-2 text-left"
+                                        data-toggle="collapse"
+                                        data-target="#collapse{{ question.id }}"
+                                        aria-expanded="false"
+                                        aria-controls="collapse{{ question.id }}">
+                                    {{ question.question }}
+                                    <i class="fas fa-plus icon-toggle"></i>
+                                </button>
+                            </h6>
+                            <div id="collapse{{ question.id }}" class="collapse"
+                                 aria-labelledby="heading{{ question.id }}"
+                                 data-parent="#accordion-candles">
+                                <div class="px-2 pb-3">
+                                    {{ question.answer|safe }}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- SHIPPING SECTION -->
+            <div class="mb-4">
+                <h5 class="text-uppercase mb-3 border-bottom pb-2">
+                    <i class="fas fa-shipping-fast mr-2"></i> Orders & Shipping
+                </h5>
+                <div class="accordion" id="accordion-shipping">
+                    {% for question in shipping %}
+                        <div class="border-bottom">
+                            <h6 class="mb-0">
+                                <button class="btn btn-link d-flex justify-content-between align-items-center w-100 py-3 px-2 text-left"
+                                        data-toggle="collapse"
+                                        data-target="#collapse{{ question.id }}"
+                                        aria-expanded="false"
+                                        aria-controls="collapse{{ question.id }}">
+                                    {{ question.question }}
+                                    <i class="fas fa-plus icon-toggle"></i>
+                                </button>
+                            </h6>
+                            <div id="collapse{{ question.id }}" class="collapse"
+                                 aria-labelledby="heading{{ question.id }}"
+                                 data-parent="#accordion-shipping">
+                                <div class="px-2 pb-3">
+                                    {{ question.answer|safe }}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
 {% endblock %}
 
 {% block postloadjs %}
 {{ block.super }}
-
+<script>
+    $(document).ready(function () {
+        $('.collapse').on('show.bs.collapse', function () {
+            $(this).prev().find('.icon-toggle').removeClass('fa-plus').addClass('fa-minus');
+        }).on('hide.bs.collapse', function () {
+            $(this).prev().find('.icon-toggle').removeClass('fa-minus').addClass('fa-plus');
+        });
+    });
+</script>
 {% endblock %}
