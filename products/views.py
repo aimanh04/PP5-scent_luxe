@@ -6,6 +6,8 @@ from django.db.models.functions import Lower
 
 from .models import Product, Category
 from .forms import ProductForm
+from reviews.models import Review
+
 
 # Create your views here.
 
@@ -61,13 +63,17 @@ def all_products(request):
 
 def product_detail(request, product_id):
     """ A view to show individual product details """
-
     product = get_object_or_404(Product, pk=product_id)
+    
+    """ Check if user already reviewed """
+    user_has_reviewed = False
+    if request.user.is_authenticated:
+        user_has_reviewed = Review.objects.filter(product=product, user=request.user).exists()
 
     context = {
         'product': product,
+        'user_has_reviewed': user_has_reviewed,
     }
-
     return render(request, 'products/product_detail.html', context)
 
 
