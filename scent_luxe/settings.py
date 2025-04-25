@@ -29,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = [
     '127.0.0.1', # local host
@@ -148,9 +148,7 @@ else:
         }
     }
 
-# DATABASES = {
-#    'default': dj_database_url.parse('postgresql://neondb_owner:Isam7eXLAjg2@ep-dark-paper-a2qr2eho.eu-central-1.aws.neon.tech/work_rerun_nail_459802')
-# }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
