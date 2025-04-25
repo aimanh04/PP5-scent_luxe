@@ -1,1 +1,1 @@
-web: gunicorn pp5-scent_luxe.wsgi:application
+web: gunicorn scent_luxe.wsgi:application
