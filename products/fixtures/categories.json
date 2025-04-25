@@ -1,0 +1,26 @@
+[
+{
+  "model": "products.category",
+  "pk": 1,
+  "fields": {
+    "name": "candles",
+    "friendly_name": "Candles"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 2,
+  "fields": {
+    "name": "diffusers",
+    "friendly_name": "Diffusers"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 3,
+  "fields": {
+    "name": "giftsbundles",
+    "friendly_name": "Gifts & Bundles"
+  }
+}
+]

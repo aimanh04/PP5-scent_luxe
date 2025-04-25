@@ -1,0 +1,92 @@
+[
+{
+  "model": "faq.faq",
+  "pk": 2,
+  "fields": {
+    "category": "candles",
+    "question": "What is the burning time of the candles?",
+    "answer": "Each candle is designed to burn for approximately 70 hours. While the wax amount could allow for a longer burn, we account for the unburnable portion at the bottom of the jar for safety—typically around 2–3 cm of wax will remain. This ensures the jar never overheats or becomes unsafe to use."
+  }
+},
+{
+  "model": "faq.faq",
+  "pk": 3,
+  "fields": {
+    "category": "candles",
+    "question": "Can the candle jar be re-used?",
+    "answer": "Absolutely! Our candle jars are designed to be repurposed. Once the wax is finished, simply remove any remaining wax with a spoon or paper towel, then clean the jar gently with warm soapy water or vinegar (take care around the label). The elegant vessel makes a great diffuser container, or you can use it as a vase, a bathroom organizer, or even a cold beverage glass. We don’t recommend using it for hot drinks."
+  }
+},
+{
+  "model": "faq.faq",
+  "pk": 4,
+  "fields": {
+    "category": "candles",
+    "question": "What kind of wax is used in your candles?",
+    "answer": "We use a 100% natural wax blend made from soy and beeswax. This combination offers a cleaner, longer burn while being gentle on the environment and beautifully fragrant in any space."
+  }
+},
+{
+  "model": "faq.faq",
+  "pk": 5,
+  "fields": {
+    "category": "candles",
+    "question": "How strong is the candle’s fragrance?",
+    "answer": "The scent is softly balanced and intentionally subtle, blending notes of jasmine, fleur de tiaré, and vanilla. It’s designed to gently fill any space without overwhelming it—perfect for any room, and appealing to all."
+  }
+},
+{
+  "model": "faq.faq",
+  "pk": 6,
+  "fields": {
+    "category": "candles",
+    "question": "Why are there small bubbles in the wax near the glass?",
+    "answer": "Tiny air bubbles may appear near the glass as the candle cools—this happens naturally during the hand-pouring process. It’s purely cosmetic and doesn’t affect the performance or burn quality of the candle."
+  }
+},
+{
+  "model": "faq.faq",
+  "pk": 7,
+  "fields": {
+    "category": "shipping",
+    "question": "What payment methods are accepted?",
+    "answer": "We process all payments securely through Stripe, allowing you to use major cards including Visa, Mastercard, and American Express."
+  }
+},
+{
+  "model": "faq.faq",
+  "pk": 8,
+  "fields": {
+    "category": "shipping",
+    "question": "How will I know if my order was received?",
+    "answer": "After placing your order, you’ll see an on-screen confirmation along with your order number. A confirmation email will follow shortly after, and you’ll be updated with shipping status and tracking details as soon as your order is dispatched."
+  }
+},
+{
+  "model": "faq.faq",
+  "pk": 9,
+  "fields": {
+    "category": "shipping",
+    "question": "What should I do if my candle arrives damaged?",
+    "answer": "If your candle arrives broken or damaged, please email us at info@scentluxe.com. While we take great care in packaging every order, transit issues can occasionally occur. We'll work with you to make it right and ensure your experience remains exceptional."
+  }
+},
+{
+  "model": "faq.faq",
+  "pk": 10,
+  "fields": {
+    "category": "shipping",
+    "question": "What is your return policy?",
+    "answer": "You have 14 days from the date of delivery to contact us if there’s an issue with your order and you’d like to request a refund. We're here to help ensure you’re completely satisfied with your purchase."
+  }
+},
+{
+  "model": "faq.faq",
+  "pk": 11,
+  "fields": {
+    "category": "shipping",
+    "question": "How long does delivery take?",
+    "answer": "Delivery typically takes 3–7 business days, depending on your location. You’ll receive tracking details as soon as your order ships so you can follow its journey to your doorstep."
+  }
+}
+]

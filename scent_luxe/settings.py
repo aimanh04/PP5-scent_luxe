@@ -10,10 +10,13 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
-from pathlib import Path
+
 import os
+import dj_database_url
 if os.path.isfile('env.py'):
     import env # flake8 will throw an error here, but it is necessary to import env.py
+
+from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-5uy5e_t1%hhk##b_e!80_op+wl@u0-uogl3mk+8m2*s!#3+a*j'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -31,6 +34,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '127.0.0.1', # local host
     'localhost', # listen for stripe webhooks
+    'aimanh04-scentluxe-eb932135f6ed.herokuapp.com',
 ]
 
 
@@ -132,13 +136,21 @@ WSGI_APPLICATION = 'scent_luxe.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
-}
+else: 
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
+# DATABASES = {
+#    'default': dj_database_url.parse('postgresql://neondb_owner:Isam7eXLAjg2@ep-dark-paper-a2qr2eho.eu-central-1.aws.neon.tech/work_rerun_nail_459802')
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

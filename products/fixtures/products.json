@@ -1,0 +1,262 @@
+[
+{
+  "model": "products.product",
+  "pk": 1,
+  "fields": {
+    "category": 1,
+    "sku": "velcarat-authentique-brut-luxury-scented-candle",
+    "name": "Velcarat Authentique Brut Luxury Scented Candle",
+    "description": "Experience the essence of Champagne, France.\r\nCrafted from an original Velcarat Champagne bottle, this luxury scented candle brings the charm of Villers-sous-Châtillon near Épernay into your home. Handmade in Grasse with natural, high-end ingredients, it fills your space with an exclusive fragrance and elegant ambience.",
+    "price": "105.00",
+    "image_url": null,
+    "image": "VELCARAT_CANDLE_IMAGES_3072_x_3072_px_2303_x_2303_px_3072_x_3072_px_-2_vYHYlwN.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 2,
+  "fields": {
+    "category": 2,
+    "sku": "luxury-parfum-oil-diffuser-refill",
+    "name": "Luxury Parfum Oil Diffuser Refill",
+    "description": "Extend the life of your Luxury Sparkle candle with the Célestine diffuser.\r\nInfused with notes of rose, pepper, and tonka bean, this elegant parfum oil diffuser blends the romance of Grasse rose gardens with the freshness of the Côte d'Azur. Housed in a vessel inspired by French wine and champagne bottles, it’s a timeless fusion of fragrance and elegance.",
+    "price": "85.00",
+    "image_url": null,
+    "image": "Diffuser_Refill_Pack_Final_Image_j0JIp06.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 8,
+  "fields": {
+    "category": 1,
+    "sku": "a.d.-coutelas-origin-brut-luxury-scented-candle",
+    "name": "A.D. Coutelas Origin Brut Luxury Scented Candle",
+    "description": "Bring the charm of Champagne, France into your home.\r\nCrafted from an original A.D. Coutelas Champagne bottle, this luxury scented candle captures the elegance of Dizy near Épernay. Handmade in Grasse with natural, premium ingredients, it fills your space with an exclusive fragrance and timeless ambience.",
+    "price": "105.00",
+    "image_url": null,
+    "image": "ADCoutleas_Transparent.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 9,
+  "fields": {
+    "category": 3,
+    "sku": "the-green-on-green-luxury-scented-candle-bundle",
+    "name": "The Green On Green Luxury Scented Candle Bundle",
+    "description": "The Green on Green Luxury Scented Candle Bundle – for lovers of all things lush and fresh.\r\nPerfect for gifting or elevating your own space, this duo brings beauty and fragrance in one luxurious package.\r\n\r\nIncludes:\r\n• 1x Cristian Senez Carte Verte Luxury Scented Candle with lid\r\n• 1x Tassin Brut Luxury Scented Candle with lid",
+    "price": "190.00",
+    "image_url": null,
+    "image": "BUNDLES_OTHERS_1.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 10,
+  "fields": {
+    "category": 3,
+    "sku": "the-golden-luxury-scented-candle-bundle",
+    "name": "The Golden Luxury Scented Candle Bundle",
+    "description": "The Golden Luxury Scented Candle Bundle – the perfect gift of elegance.\r\nWhether you're treating yourself or someone special, this duo adds beauty and fragrance to any space.\r\n\r\nIncludes:\r\n• 1x Jean-Michel Bouchet & Filles Sélection Luxury Scented Candle with lid\r\n• 1x Tassin Brut Rosé Luxury Scented Candle with lid",
+    "price": "190.00",
+    "image_url": null,
+    "image": "BUNDLES_OTHERS.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 11,
+  "fields": {
+    "category": 2,
+    "sku": "luxury-sparkle-candle-and-diffuser-bundle",
+    "name": "Luxury Sparkle Candle and Diffuser Bundle",
+    "description": "Enjoy beautiful moments with your Luxury Sparkle Candle before transforming your empty candle vessel in to a luxurious parfum diffuser.",
+    "price": "170.00",
+    "image_url": null,
+    "image": "Candle_DiffuserBundleGreenCandle.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 12,
+  "fields": {
+    "category": 1,
+    "sku": "cattin-brut-luxury-scented-candle",
+    "name": "Cattin Brut Luxury Scented Candle",
+    "description": "Bring the beauty of Alsace into your space.\r\nMade from an original Maison Cattin Crémant bottle, this luxury scented candle captures the charm of one of Alsace’s oldest wineries. Handmade in Grasse with natural, luxurious ingredients, it fills your home with an exclusive fragrance and elegant ambience.",
+    "price": "105.00",
+    "image_url": null,
+    "image": "CattinBrutCandle.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 13,
+  "fields": {
+    "category": 1,
+    "sku": "cattin-brut-rosé-luxury-scented-candle",
+    "name": "Cattin Brut Rosé Luxury Scented Candle",
+    "description": "Have you been dreaming of visiting the Alsace region of France? Or perhaps you have visited and would love a long lasting reminder of your time there. The beautiful villages surrounded by vineyards, and scenery unlike anywhere else in the world. Let us share a piece of the Alsace with you. The Cattin Brut Luxury Scented Candle is made from an original Cremant bottle and label in partnership with Maison Cattin. One of the biggest and oldest wineries in the Alsace. This luxury scented candle will fill your space with a beautiful and exclusive fragrance and create a wonderful ambience. Handmade and poured in Grasse, the parfum capital of the world with all natural and luxurious ingredients.",
+    "price": "105.00",
+    "image_url": null,
+    "image": "CattinBrutRoseCandle.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 14,
+  "fields": {
+    "category": 1,
+    "sku": "collard-picard-classic-rosé-luxury-scented-candle",
+    "name": "Collard-Picard Classic Rosé Luxury Scented Candle",
+    "description": "A scent of Champagne, straight from Épernay.\r\nCrafted from an original Collard-Picard Champagne bottle, this luxury scented candle captures the elegance of the Avenue de Champagne. Handmade in Grasse with all-natural, premium ingredients, it fills your space with an exclusive fragrance and timeless ambience.",
+    "price": "105.00",
+    "image_url": null,
+    "image": "CollardPicardClassicRoseCandle.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 15,
+  "fields": {
+    "category": 1,
+    "sku": "collard-picard-cuvée-des-merveilles-luxury-scented-candle",
+    "name": "Collard-Picard Cuvée des Merveilles Luxury Scented Candle",
+    "description": "A piece of Champagne luxury, captured in scent.\r\nMade from an original Collard-Picard Cuvée des Merveilles bottle, this luxury candle brings the prestige of Épernay’s Avenue de Champagne into your home. Hand-poured in Grasse with natural, premium ingredients, it fills your space with a refined and exclusive fragrance.",
+    "price": "105.00",
+    "image_url": null,
+    "image": "CollardPicardCuveedesMerveillesCandle.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 16,
+  "fields": {
+    "category": 1,
+    "sku": "collard-picard-cuvée-dom-picard-luxury-scented-candle",
+    "name": "Collard-Picard Cuvée Dom Picard Luxury Scented Candle",
+    "description": "A scent as timeless as Champagne itself.\r\nCrafted from an original Collard-Picard Classic Rosé bottle, this luxury candle brings the elegance of Épernay’s Avenue de Champagne into your home. Handmade in Grasse with natural, luxurious ingredients, it fills your space with a refined and exclusive fragrance.",
+    "price": "105.00",
+    "image_url": null,
+    "image": "CollardPicardCuveeDomPicardCandle.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 17,
+  "fields": {
+    "category": 1,
+    "sku": "cristian-senez-brut-rosé-luxury-scented-candle",
+    "name": "Cristian Senez Brut Rosé Luxury Scented Candle",
+    "description": "Dreaming of the Champagne region or seeking a lasting reminder? The Cristian Senez Brut Rosé Luxury Scented Candle, made from an authentic Champagne bottle and label in collaboration with Champagne Cristian Senez, brings the essence of the Côte-des-Bar’s stunning vineyards and unique scenery into your home.",
+    "price": "105.00",
+    "image_url": null,
+    "image": "CristianSenezBrutRoseCandle.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 18,
+  "fields": {
+    "category": 1,
+    "sku": "cristian-senez-carte-verte-luxury-scented-candle",
+    "name": "Cristian Senez Carte Verte Luxury Scented Candle",
+    "description": "Longing for the Champagne region or wishing to relive your visit? The Cristian Senez Carte Verte Luxury Scented Candle, crafted from an authentic Champagne bottle and label in collaboration with Champagne Cristian Senez, brings the charm of the Côte-des-Bar’s vineyards and picturesque villages into your home.",
+    "price": "105.00",
+    "image_url": null,
+    "image": "CristianSenezCarteVerteCandle.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 19,
+  "fields": {
+    "category": 1,
+    "sku": "jean-michel-bouchet-&-filles-blanc-de-blancs-luxury-scented-candle",
+    "name": "Jean-Michel Bouchet & Filles Blanc De Blancs Luxury Scented Candle",
+    "description": "Dreaming of the Champagne region or want a lasting reminder? The Jean-Michel Bouchet & Filles Blanc De Blancs Luxury Scented Candle, made from an authentic Champagne bottle and label in collaboration with Champagne Jean-Michel Bouchet & Filles, captures the essence of Sarcy’s rolling hills and Champagne vineyards.",
+    "price": "95.00",
+    "image_url": null,
+    "image": "JeanMichelBouchetBlancdeBlancsCandle.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 20,
+  "fields": {
+    "category": 1,
+    "sku": "jean-michel-bouchet-&-filles-brut-rosé-luxury-scented-candle",
+    "name": "Jean-Michel Bouchet & Filles Brut Rosé Luxury Scented Candle",
+    "description": "Dreaming of the Champagne region or seeking a lasting reminder? The Jean-Michel Bouchet & Filles Brut Rosé Luxury Scented Candle, crafted from an authentic Champagne bottle and label in collaboration with Champagne Jean-Michel Bouchet & Filles, brings the essence of Sarcy’s lush hills and Champagne vineyards into your home.",
+    "price": "95.00",
+    "image_url": null,
+    "image": "JeanMichelBouchetBrutRoseCandle.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 21,
+  "fields": {
+    "category": 1,
+    "sku": "jean-michel-bouchet-&-filles-sélection-luxury-scented-candle",
+    "name": "Jean-Michel Bouchet & Filles Sélection Luxury Scented Candle",
+    "description": "Dreaming of the Champagne region or looking for a lasting reminder? The Jean-Michel Bouchet & Filles Sélection Luxury Scented Candle, made from an authentic Champagne bottle and label in collaboration with Champagne Jean-Michel Bouchet & Filles, captures the essence of Sarcy’s lush hills and Champagne vineyards.",
+    "price": "95.00",
+    "image_url": null,
+    "image": "JeanMichelBouchetSelectionCandle.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 22,
+  "fields": {
+    "category": 1,
+    "sku": "jean-michel-bouchet-&-filles-tradition-luxury-scented-candle",
+    "name": "Jean-Michel Bouchet & Filles Tradition Luxury Scented Candle",
+    "description": "Dreaming of the Champagne region or want a lasting reminder? The Jean-Michel Bouchet & Filles Tradition Luxury Scented Candle, crafted from an authentic Champagne bottle and label in collaboration with Champagne Jean-Michel Bouchet & Filles, brings the essence of Sarcy’s rolling hills and Champagne vineyards into your home.",
+    "price": "95.00",
+    "image_url": null,
+    "image": "JeanMichelBouchetTraditionCandle.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 23,
+  "fields": {
+    "category": 1,
+    "sku": "tassin-brut-luxury-scented-candle",
+    "name": "Tassin Brut Luxury Scented Candle",
+    "description": "Dreaming of the Champagne region or want a lasting reminder? The Tassin Brut Luxury Scented Candle, crafted from an authentic Champagne bottle and label in collaboration with Champagne Tassin Successeurs, captures the essence of Loches-sur-Ource and the Côte-des-Bar's stunning vineyards.",
+    "price": "105.00",
+    "image_url": null,
+    "image": "TassinBrutCandle.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 24,
+  "fields": {
+    "category": 1,
+    "sku": "tassin-brut-rosé-luxury-scented-candle",
+    "name": "Tassin Brut Rosé Luxury Scented Candle",
+    "description": "Dreaming of the Champagne region or looking for a lasting reminder? The Tassin Brut Rosé Luxury Scented Candle, made from an authentic Champagne bottle and label in collaboration with Champagne Tassin Successeurs, brings the essence of Loches-sur-Ource and the Côte-des-Bar’s vineyards into your home.",
+    "price": "105.00",
+    "image_url": null,
+    "image": "TassinBrutRoseCandle.webp"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 25,
+  "fields": {
+    "category": 1,
+    "sku": "tassin-excellence-luxury-scented-candle",
+    "name": "Tassin Excellence Luxury Scented Candle",
+    "description": "Dreaming of the Champagne region or seeking a lasting reminder? The Tassin Excellence Luxury Scented Candle, crafted from an authentic Champagne bottle and label in collaboration with Champagne Tassin Successeurs, captures the essence of Loches-sur-Ource and the Côte-des-Bar’s scenic vineyards.",
+    "price": "105.00",
+    "image_url": null,
+    "image": "TassinExcellenceCandle.webp"
+  }
+}
+]
