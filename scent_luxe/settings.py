@@ -37,6 +37,12 @@ ALLOWED_HOSTS = [
     'aimanh04-scentluxe-eb932135f6ed.herokuapp.com',
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://127.0.0.1',
+    'https://localhost',
+    'aimanh04-scentluxe-eb932135f6ed.herokuapp.com',
+]
+
 
 # Application definition
 
