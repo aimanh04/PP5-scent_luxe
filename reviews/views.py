@@ -9,7 +9,10 @@ from products.models import Product
 @login_required
 def add_review(request, product_id):
     product = get_object_or_404(Product, id=product_id)
-    existing_review = Review.objects.filter(user=request.user, product=product).first()
+    existing_review = Review.objects.filter(
+        user=request.user,
+        product=product
+    ).first()
 
     if existing_review:
         messages.warning(request, "You have already reviewed this product.")
@@ -27,7 +30,11 @@ def add_review(request, product_id):
     else:
         form = ReviewForm()
 
-    return render(request, 'reviews/add_review.html', {'form': form, 'product': product})
+    return render(
+        request,
+        'reviews/add_review.html',
+        {'form': form, 'product': product}
+    )
 
 
 @login_required
@@ -41,10 +48,14 @@ def edit_review(request, review_id):
             return redirect('product_detail', product_id=review.product.id)
     else:
         form = ReviewForm(instance=review)
-    return render(request, 'reviews/edit_review.html', {
-        'form': form,
-        'product': review.product
-    })
+    return render(
+        request,
+        'reviews/edit_review.html',
+        {
+            'form': form,
+            'product': review.product
+        }
+    )
 
 
 @login_required

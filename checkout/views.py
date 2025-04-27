@@ -1,4 +1,6 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import (
+    render, redirect, reverse, get_object_or_404, HttpResponse
+)
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
@@ -68,8 +70,10 @@ def checkout(request):
                     order_line_item = OrderLineItem(
                         order=order,
                         product=product,
-                        quantity=item_data if isinstance(item_data, int)
-                        else item_data['quantity'],
+                        quantity=(
+                            item_data if isinstance(item_data, int)
+                            else item_data['quantity']
+                        ),
                     )
                     order_line_item.save()
                 except Product.DoesNotExist:
@@ -126,7 +130,8 @@ def checkout(request):
     if not stripe_public_key:
         messages.warning(
             request,
-            'Stripe public key is missing. Did you forget to set it in your environment?'
+            'Stripe public key is missing. '
+            'Did you forget to set it in your environment?'
         )
 
     template = 'checkout/checkout.html'
