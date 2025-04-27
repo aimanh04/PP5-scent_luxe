@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class FAQ(models.Model):
     CATEGORY_CHOICES = [
         ('candles', 'Candles'),

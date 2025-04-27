@@ -11,9 +11,9 @@ from reviews.models import Review
 
 # Create your views here.
 
-def all_products(request):
-    """ A view to show all products, including sorting and search queries """
 
+def all_products(request):
+    """A view to show all products, including sorting and search queries"""
     products = Product.objects.all()
     query = None
     categories = None
@@ -33,7 +33,7 @@ def all_products(request):
                 direction = request.GET['direction']
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
-            products = products.order_by(sortkey)   
+            products = products.order_by(sortkey)
 
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
@@ -45,7 +45,7 @@ def all_products(request):
             if not query:
                 messages.error(request, "You didn't enter any search criteria!")
                 return redirect(reverse('products'))
-            
+
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 
@@ -62,13 +62,16 @@ def all_products(request):
 
 
 def product_detail(request, product_id):
-    """ A view to show individual product details """
+    """A view to show individual product details"""
     product = get_object_or_404(Product, pk=product_id)
-    
-    """ Check if user already reviewed """
+
+    # Check if user already reviewed
     user_has_reviewed = False
     if request.user.is_authenticated:
-        user_has_reviewed = Review.objects.filter(product=product, user=request.user).exists()
+        user_has_reviewed = Review.objects.filter(
+            product=product,
+            user=request.user
+        ).exists()
 
     context = {
         'product': product,
@@ -79,7 +82,7 @@ def product_detail(request, product_id):
 
 @login_required
 def add_product(request):
-    """ Add a product to the store """
+    """Add a product to the store"""
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
@@ -91,7 +94,10 @@ def add_product(request):
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+            messages.error(
+                request,
+                'Failed to add product. Please ensure the form is valid.'
+            )
     else:
         form = ProductForm()
 
@@ -105,7 +111,7 @@ def add_product(request):
 
 @login_required
 def edit_product(request, product_id):
-    """ Edit a product in the store """
+    """Edit a product in the store"""
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
@@ -118,7 +124,10 @@ def edit_product(request, product_id):
             messages.success(request, 'Successfully updated product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to update product. Please ensure the form is valid.')
+            messages.error(
+                request,
+                'Failed to update product. Please ensure the form is valid.'
+            )
     else:
         form = ProductForm(instance=product)
         messages.info(request, f'You are editing {product.name}')
@@ -134,11 +143,11 @@ def edit_product(request, product_id):
 
 @login_required
 def delete_product(request, product_id):
-    """ Delete a product from the store """
+    """Delete a product from the store"""
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
-        
+
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
     messages.success(request, 'Product deleted!')

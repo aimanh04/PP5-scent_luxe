@@ -10,7 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
-
 import os
 import dj_database_url
 if os.path.isfile('env.py'):
@@ -32,8 +31,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = [
-    '127.0.0.1', # local host
-    'localhost', # listen for stripe webhooks
+    '127.0.0.1',  # local host
+    'localhost',  # listen for stripe webhooks
     'aimanh04-scentluxe-eb932135f6ed.herokuapp.com',
 ]
 
@@ -98,15 +97,15 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request', # required by allauth
+                'django.template.context_processors.request',  # required by allauth
                 'django.contrib.auth.context_processors.auth', 
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
                 'bag.contexts.bag_contents',
             ],
             'builtins': [
-                 'crispy_forms.templatetags.crispy_forms_tags',
-                 'crispy_forms.templatetags.crispy_forms_field',
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field',
             ],
         },
     },
@@ -203,7 +202,7 @@ if 'USE_AWS' in os.environ:
     }
 
     # Bucket Config
-    AWS_STORAGE_BUCKET_NAME = 'aimanh04-scentluxe' # change this to your AWS bucket name
+    AWS_STORAGE_BUCKET_NAME = 'aimanh04-scentluxe'  # change this to your AWS bucket name
     AWS_S3_REGION_NAME = 'us-east-1'
     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')

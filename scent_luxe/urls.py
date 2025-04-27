@@ -33,4 +33,5 @@ urlpatterns = [
     path('faq/', include('faq.urls')),
     path('reviews/', include('reviews.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
 handler404 = 'scent_luxe.views.handler404'

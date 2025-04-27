@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import About
 
+
 def about(request):
     """
     Renders the most recent information on the about page
@@ -10,5 +11,5 @@ def about(request):
     return render(
         request,
         "about/about.html",
-        {"about_content": about},
+        {"about_content": about_content},
     )

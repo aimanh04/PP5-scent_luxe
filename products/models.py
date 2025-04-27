@@ -2,8 +2,6 @@ from django.db import models
 
 
 class Category(models.Model):
-
-
     class Meta:
         verbose_name_plural = 'Categories'
 
@@ -18,7 +16,9 @@ class Category(models.Model):
 
 
 class Product(models.Model):
-    category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
+    category = models.ForeignKey(
+        'Category', null=True, blank=True, on_delete=models.SET_NULL
+    )
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
     description = models.TextField()
@@ -28,7 +28,6 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
-
 
     @property
     def average_rating(self):
@@ -42,5 +41,3 @@ class Product(models.Model):
             else:
                 return float(ratings[mid])
         return 0
-
-    
