@@ -79,14 +79,16 @@ def checkout(request):
                 except Product.DoesNotExist:
                     messages.error(
                         request,
-                        "One of the products in your bag wasn't found in our database. "
-                        "Please call us for assistance!"
+                        "One of the products in your bag wasn't found in our "
+                        "database. Please call us for assistance!"
                     )
                     order.delete()
                     return redirect(reverse('view_bag'))
 
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(
+                reverse('checkout_success', args=[order.order_number])
+            )
         else:
             messages.error(
                 request,
@@ -96,7 +98,10 @@ def checkout(request):
     else:
         bag = request.session.get('bag', {})
         if not bag:
-            messages.error(request, "There's nothing in your bag at the moment")
+            messages.error(
+                request,
+                "There's nothing in your bag at the moment"
+            )
             return redirect(reverse('products'))
 
         current_bag = bag_contents(request)
@@ -165,8 +170,8 @@ def checkout_success(request, order_number):
                 'default_country': order.country,
                 'default_postcode': order.postcode,
                 'default_town_or_city': order.town_or_city,
-                'default_street_address1': order.street_address1,
-                'default_street_address2': order.street_address2,
+                'street_address1': order.street_address1,
+                'street_address2': order.street_address2,
                 'default_county': order.county,
             }
             user_profile_form = UserProfileForm(profile_data, instance=profile)
@@ -185,7 +190,7 @@ def checkout_success(request, order_number):
     template = 'checkout/checkout_success.html'
     context = {
         'order': order,
-        'profile': profile,  # pass profile to template for conditional logic
+        'profile': profile,
     }
 
     return render(request, template, context)
