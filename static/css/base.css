@@ -147,7 +147,14 @@ footer.container-wrapper .footer a {
 
 footer.container-wrapper .footer .block-divider {
     border-color: white;
-  }
+}
+
+#mc_embed_signup {
+    background: #778899;
+    clear: left;
+    font: 14px Helvetica, Arial, sans-serif;
+    width: 600px;
+}
 
 /* ------------------------------- bootstrap toasts */
 

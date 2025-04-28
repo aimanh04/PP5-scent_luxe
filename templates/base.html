@@ -29,6 +29,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
+        <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
     {% endblock %}
 
     {% block extra_css %}
@@ -169,12 +170,57 @@
              <div class="col-12 col-md-6">
                <h3>Social</h3>
                <p>Keep up to date with all our latest offers</p>
-               <a href="#" target="_blank"><i class="fab fa-facebook-square"></i> Follow us on Facebook!</a>
+            <a href="https://www.facebook.com/profile.php?id=61575825898321" target="_blank"><i class="fab fa-facebook-square"></i>
+                Follow us on Facebook!</a>
              </div>
              <div class="col-12 col-md-6">
-               <h2>Subscribe!</h2>
-               <p>Get exclusive offers and discount codes by subscribing to our monthly newsletter</p>
-               <!-- Mailchimp signup form here -->
+                </style>
+                <div id="mc_embed_signup">
+                    <form action="https://herokuapp.us17.list-manage.com/subscribe/post?u=72dfc796ff300d8bb07944ff8&amp;id=95f6562d27&amp;f_id=00f4bde0f0" 
+                          method="post" 
+                          id="mc-embedded-subscribe-form" 
+                          name="mc-embedded-subscribe-form" 
+                          class="validate" 
+                          target="_blank">
+                        <div id="mc_embed_signup_scroll">
+                            <h3>Subscribe</h3>
+                            <p>Get exclusive offers and discount codes by subscribing to the monthly newsletter</p>
+                            <div class="indicates-required">
+                                <span class="asterisk">*</span> indicates required
+                            </div>
+                            
+                            <div class="mc-field-group">
+                                <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
+                                <input type="email" 
+                                       name="EMAIL" 
+                                       class="required email" 
+                                       id="mce-EMAIL" 
+                                       required="" 
+                                       value="">
+                            </div>
+                
+                            <div id="mce-responses" class="clear">
+                                <div class="response" id="mce-error-response" style="display: none;"></div>
+                                <div class="response" id="mce-success-response" style="display: none;"></div>
+                            </div>
+                
+                            <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                                <input type="text" 
+                                       name="b_72dfc796ff300d8bb07944ff8_95f6562d27" 
+                                       tabindex="-1" 
+                                       value="">
+                            </div>
+                
+                            <div class="clear">
+                                <input type="submit" 
+                                       name="subscribe" 
+                                       id="mc-embedded-subscribe" 
+                                       class="button" 
+                                       value="Subscribe">
+                            </div>
+                        </div>
+                    </form>
+                </div>                  
              </div>
            </div>
          </section>
@@ -183,6 +229,27 @@
     {% block postloadjs %}
     <script type="text/javascript">
       $('.toast').toast('show');
+    </script>
+    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js">
+    </script>
+    <script type="text/javascript">
+      (function ($) {
+        window.fnames = new Array();
+        window.ftypes = new Array();
+        fnames[0] = 'EMAIL';
+        ftypes[0] = 'email';
+        fnames[1] = 'FNAME';
+        ftypes[1] = 'text';
+        fnames[2] = 'LNAME';
+        ftypes[2] = 'text';
+        fnames[3] = 'ADDRESS';
+        ftypes[3] = 'address';
+        fnames[4] = 'PHONE';
+        ftypes[4] = 'phone';
+        fnames[5] = 'BIRTHDAY';
+        ftypes[5] = 'birthday';
+      }(jQuery));
+      var $mcj = jQuery.noConflict(true);
     </script>
     {% endblock %}
 
