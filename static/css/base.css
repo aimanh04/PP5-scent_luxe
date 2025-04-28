@@ -8,6 +8,15 @@ body {
     height: calc(100vh - 164px);
     color: #555;
     font-family: 'Lato';
+    min-height: 125vh;
+}
+
+main {
+    padding-bottom: 10em;
+}
+
+.index-header {
+    padding-top: 10em;
 }
 
 /* from Bulma */
@@ -121,6 +130,24 @@ input[name='q']::placeholder {
 .logo-img:hover {
     transform: scale(1.05);
 }
+
+footer {
+    margin-top: auto;
+    padding: 15px;
+    background-color: #778899;
+    width: 100%;
+}
+
+footer.container-wrapper .footer h2,
+footer.container-wrapper .footer h3,
+footer.container-wrapper .footer p,
+footer.container-wrapper .footer a {
+  color: white;
+}
+
+footer.container-wrapper .footer .block-divider {
+    border-color: white;
+  }
 
 /* ------------------------------- bootstrap toasts */
 

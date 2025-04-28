@@ -1,3 +1,5 @@
 User-agent: *
-Disallow:
+Disallow: /accounts/
+Disallow: /admin/
+Disallow: /bag/
 Sitemap: https://aimanh04-scentluxe-eb932135f6ed.herokuapp.com/sitemap.xml
