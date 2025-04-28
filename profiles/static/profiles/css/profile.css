@@ -19,3 +19,62 @@
 #id_default_country option:first-child {
     color: #aab7c4;
 }
+
+/* Style the reviews section */
+.profile-reviews-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.review-item {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.review-item h5 {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.review-item p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.review-item a {
+    text-decoration: none;
+    width: fit-content;
+    margin-right: 5px;
+}
+
+.review-item .btn {
+    text-transform: uppercase;
+    padding: 5px 15px;
+    font-size: 0.85rem;
+    border-radius: 5px;
+}
+
+.review-item .btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.review-item .btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.review-item a:hover {
+    opacity: 0.8;
+}
+
+/* Add some space at the bottom */
+.profile-reviews-section {
+    padding-bottom: 30px;
+}
