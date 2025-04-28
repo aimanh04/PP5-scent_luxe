@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://aimanh04-scentluxe-eb932135f6ed.herokuapp.com/sitemap.xml
