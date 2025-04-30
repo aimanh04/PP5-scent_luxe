@@ -12,7 +12,7 @@ body {
 }
 
 main {
-    padding-bottom: 10em;
+    padding-bottom: 5em;
 }
 
 .index-header {
@@ -53,7 +53,7 @@ main {
 
 .btn-outline-black {
     background: white;
-    color: black !important; /* use important to override link colors for <a> elements */
+    color: black !important;
     border: 1px solid black;
 }
 
@@ -142,18 +142,59 @@ footer.container-wrapper .footer h2,
 footer.container-wrapper .footer h3,
 footer.container-wrapper .footer p,
 footer.container-wrapper .footer a {
-  color: white;
+    color: white;
 }
 
 footer.container-wrapper .footer .block-divider {
     border-color: white;
 }
 
-#mc_embed_signup {
+/* Adjusting the form and input field to be more responsive */
+.mc_embed_signup,
+.mc-field-group .asterisk,
+.indicates-required,
+.mc-field-group {
     background: #778899;
     clear: left;
-    font: 14px;
-    width: 600px;
+    font-size: 14px;
+    width: 100%; 
+    max-width: 600px; 
+    margin: 0 auto; 
+}
+
+.mc-field-group {
+    margin-bottom: 10px;
+}
+
+.mc-field-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.mc-field-group input[type="email"] {
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#mc-embedded-subscribe {
+    padding: 10px 20px;
+    background-color: white;
+    color: #8E0045;
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 100%;
+}
+
+#mc-embedded-subscribe:hover {
+    background-color: #8E0045;
+    color: white;
 }
 
 /* ------------------------------- bootstrap toasts */
@@ -236,8 +277,8 @@ footer.container-wrapper .footer .block-divider {
 
 /* Allauth form formatting */
 .allauth-form-inner-content p {
-    margin-top: 1.5rem; /* mt-4 */
-    color: #6c757d; /* text-secondary */
+    margin-top: 1.5rem;
+    color: #6c757d;
 }
 
 .allauth-form-inner-content input {
@@ -272,7 +313,7 @@ footer.container-wrapper .footer .block-divider {
     line-height: 1.5;
     border-radius: 0;
 
-    /* standard bootstrap btn transitions */
+    
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
@@ -284,7 +325,7 @@ footer.container-wrapper .footer .block-divider {
 }
 
 .allauth-form-inner-content a {
-	color: #17a2b8; /* text-info */
+	color: #17a2b8; 
 }
 
 /* Product Form */
@@ -374,5 +415,34 @@ footer.container-wrapper .footer .block-divider {
 
     .increment-qty, .decrement-qty {
         padding: .25rem .5rem !important;
+    }
+}
+
+/* Ensuring that the form fits well on small screens */
+@media (max-width: 767px) {
+    .mc_embed_signup {
+        padding: 15px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .mc-field-group {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .mc-field-group input[type="email"] {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    #mc-embedded-subscribe {
+        width: 100%;
+    }
+
+    .indicates-required {
+        color: white;
+        font-size: 12px;
+        margin-top: 5px;
     }
 }
