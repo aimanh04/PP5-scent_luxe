@@ -149,6 +149,7 @@ About Us, My Account with Sign-up and Log-in pages, and shopping bag.
 | Logout functionality works correctly | Passed |
 
 
+
 #### Navigation Testing
 
 | Test Case | Status |
@@ -158,33 +159,63 @@ About Us, My Account with Sign-up and Log-in pages, and shopping bag.
 | Users can access posts successfully | Passed |
 
 
+
 #### User Actions and Expected Outcomes
 
 | Action Performed | Expected Result | Outcome |
-|:---|:---|:---:|
-|  |  | Passed |
-|  |  | Passed |
-|  |  | Passed |
-|  |  | Passed |
-|  |  | Passed |
-|  |  | Passed |
-|  |  | Passed |
-|  |  | Passed |
-|  |  | Passed |
-|  |  | Passed |
-|  |  | Passed |
+|:------------------|:----------------|:-------:|
+| User uses the search bar | Products matching the search query are displayed | Passed |
+| User filters by category | Products in the selected category are shown | Passed |
+| User views product detail page | Full product information, price, and reviews are displayed | Passed |
+| User adds a product to the shopping bag | Product is added and bag total is updated | Passed |
+| User views shopping bag | All added items with quantities and prices are displayed | Passed |
+| User updates quantity in shopping bag | Total is recalculated based on new quantity | Passed |
+| User removes an item from the bag | Item is removed and total is updated | Passed |
+| User proceeds to checkout | Checkout form appears with pre-filled profile data if available | Passed |
+| User enters delivery and payment info | Stripe processes payment and order confirmation page is shown | Passed |
+| User receives a confirmation email | Email is delivered to user with order details | Passed |
+| User views their profile | Profile info, order history, and submitted reviews are displayed | Passed |
+| User updates default delivery info | New info is saved and used in future checkouts | Passed |
+| User views an order confirmation from profile | Full order details and status are displayed | Passed |
+| User submits a product review | Review is saved, linked to user, and displayed on the product page | Passed |
+| User views all their reviews in profile | All reviews made by the user are visible | Passed |
+| User navigates to the FAQ page | Common questions and answers are displayed | Passed |
+| User visits the About page | Brand story and product philosophy are shown | Passed |
+| User uses the contact form | Message is sent and a success notification is shown | Passed |
+
 
 
 #### Layout and Functionality
 
 | Test Action | Expected Result | Outcome |
-|:---|:---|:---:|
-|  |  | Passed |
-|  |  | Passed |
-|  |  | Passed |
-|  |  | Passed |
-|  |  | Passed |
-|  |  | Passed |
+|:------------|:----------------|:-------:|
+| All pages are fully responsive on desktop, tablet, and mobile | Layout adapts to screen size without breaking | Passed |
+| Product grid displays correctly on all devices | Product images and text align and scale properly | Passed |
+| Shopping bag icon in nav updates correctly when items are added | Bag count increases and total is updated | Passed |
+| Forms (login, signup, checkout, contact) are styled and usable | Input fields display correctly with proper spacing | Passed |
+| Star rating system displays cleanly on product pages | Stars are properly aligned and visually distinct | Passed |
+| Review section is well-structured under product details | Reviews are displayed with username, rating, and comment | Passed |
+| Toast/success/error messages are clearly visible and styled | Bootstrap alerts show in correct colors and positions | Passed |
+| Footer and navigation bar remain fixed and accessible | Navigation remains intuitive and links are functional | Passed |
+
+
+
+#### Admin Testing
+
+| Test Action | Expected Result | Outcome |
+|:------------|:----------------|:-------:|
+| Admin logs into Django admin panel | Admin dashboard is accessible with all registered models | Passed |
+| Admin adds a new product | Product is created and appears on the storefront | Passed |
+| Admin edits an existing product | Product updates are saved and reflected on the site | Passed |
+| Admin deletes a product | Product is removed from the storefront and database | Passed |
+| Admin views all customer orders | Orders with user info, line items, and totals are displayed | Passed |
+| Admin views individual order detail | Order contents, delivery info, and Stripe payment ID are visible | Passed |
+| Admin deletes a customer review | Review is removed from the product page and admin list | Passed |
+| Admin modifies site content (e.g. FAQ) | Updated content is saved and live on the site | Passed |
+| Admin accesses and manages contact form messages | Messages are listed and viewable in the admin panel | Passed |
+| Stripe payments appear in dashboard after order | Successful payments are recorded and matched with order ID | Passed |
+| Admin panel remains secure and only accessible to staff | Non-admin users are restricted from accessing the admin URL | Passed |
+
 
 
 ### Chrome Developer Tools  
