@@ -125,15 +125,19 @@ About Us, My Account with Sign-up and Log-in pages, and shopping bag.
 - [Bootstrap](https://getbootstrap.com) - Used to style website and add better responsiveness and interactivity
 
 
-### Installed Django Packages  
+### Installed Django & Essential Packages
 
-- **Gunicorn**: Used as the web server for deployment on Heroku.  
-- **Cloudinary**: Hosts static and media files for efficient content delivery.  
-- **dj-database-url**: Parses the database URL from Heroku's environment variables.  
-- **psycopg2-binary**: Acts as a PostgreSQL adapter for Python to manage database connections.  
-- **Django Summernote**: Provides a rich-text editor for the admin panel.  
-- **Django Allauth**: Handles authentication, user registration, and account management.  
-- **Crispy Forms**: Enhances form styling for a better user interface.  
+- **Django**: Main web framework used to build the ScentLuxe eCommerce platform.
+- **Gunicorn**: WSGI server for running Django in production (used on Heroku).
+- **Flake8**: Python linter that enforces clean code and PEP8 compliance.
+- **dj-database-url**: Parses the database URL from environment variables (used with Heroku + PostgreSQL).
+- **psycopg2-binary**: PostgreSQL adapter for Django to connect to a remote PostgreSQL database.
+- **Django Allauth**: Handles user authentication, registration, and social login.
+- **Crispy Forms**: Improves the rendering of Django forms with Bootstrap integration.
+- **Django Summernote**: Adds a rich-text editor to the Django admin for editable content fields.
+- **django-storages**: Enables Django to use Amazon S3 for media file storage.
+- **boto3**: AWS SDK used alongside `django-storages` to interact with S3.
+- **stripe**: Python library used to integrate Stripe for secure payment processing.
 
 
 ## TESTING
@@ -245,24 +249,23 @@ During development, testing was conducted primarily on Google Chrome. In product
 <details>
 <summary><strong>HTML Validation</strong></summary>
 
-HTML Validation
 I used the recommended [HTML W3C Validator](https://validator.w3.org/nu) to validate all of my HTML pages.
 
 | Page             |    W3C Screnshots                                    |             
 | -----------------|------------------------------------------------------|
-| Home             |  ![alt text](media/image-1.png)                      |
-| Products         |  ![alt text](media/image-1.png)                      |            
-| Product Detail   |  ![alt text](media/image-1.png)                      |
-| FAQ              |  ![alt text](media/image-1.png)                      |
-| Contact          |  ![alt text](media/image-1.png)                      |
-| About Us         |  ![alt text](media/image-1.png)                      |
-| Register         |  ![alt text](media/image-1.png)                      |
-| Login            |  ![alt text](media/image-1.png)                      |
-| Profile          |  ![alt text](media/cont.png)                         |
-| Bag              |  ![alt text](media/cont.png)                         |
-| Add Review       |  ![alt text](media/eva1.png)                         |
-| Checkout         |  ![alt text](media/eva1.png)                         |
-| Product Manage   |  ![alt text](media/eva1.png)                         |
+| Home             |  ![Home Page](readme/testing/home-testing.png)       |
+| Products         |  ![Products](readme/testing/products-testing.png)    |            
+| Product Detail   |  ![Product Page](readme/testing/product-page.png)    |
+| FAQ              |  ![FAQ Page](readme/testing/faq-testing.png)         |
+| Contact          |  ![Contact Page](readme/testing/contact-testing.png) |
+| About Us         |  ![About Page](readme/testing/about-testing.png)     |
+| Register         |  ![Register Page](readme/testing/signup-testing.png) |
+| Login            |  ![Login Page](readme/testing/login-testing.png)     |
+| Profile          |  ![Profile Page](readme/testing/profile-testing.png) |
+| Bag              |  ![Bag Page](readme/testing/bag-testing.png)         |
+| Add Review       |  ![Add Review Page](readme/testing/add-reviews.png)  |
+| Checkout         |  ![Checkout Page](readme/testing/checkout-test.png)  |
+| Product Manage   |  ![Product Manage](readme/testing/product-add.png)   |
 
 </details>
 
@@ -271,8 +274,17 @@ I used the recommended [HTML W3C Validator](https://validator.w3.org/nu) to vali
 <details>
 <summary><strong>CSS Validation</strong></summary>
 
-CSS Validation
-![CSS Test](readme/testing/csstest.png)
+
+I used the recommended [CSS W3C Validator](https://validator.w3.org/nu) to validate all of my CSS Files.
+
+| CSS             |    W3C Screnshots                                     |             
+| -----------------|------------------------------------------------------|
+| Base.CSS         |  ![Base](readme/testing/base-css.png)                |
+| Profile.CSS      |  ![Profile](readme/testing/profile-css.png)          |            
+| FAQ.CSS          |  ![FAQ](readme/testing/faq-css.png)                  |
+| Checkout.CSS     |  ![Checkout](readme/testing/checkout-css.png)        |
+
+
 </details>
 
 #### JSHint
@@ -280,8 +292,15 @@ CSS Validation
 <details>
 <summary><strong>JSHint Validation</strong></summary>
 
-JSHint Validation
-![JSHint Test](readme/testing/jshint.png)
+
+I used the recommended [JSHint Validator](https://jshint.com/) to validate all of my JS Code.
+
+| JS            |    W3C Screnshots                                     |             
+| -----------------|------------------------------------------------------|
+| Stripe_elements.js         |  ![Stripe JS](readme/testing/stripe-js.png)                |
+| Countryfield.js      |  ![Countryfield JS](readme/testing/countryfield-js.png)          |            
+
+
 </details>
 
 #### CI Python Linter
@@ -289,13 +308,22 @@ JSHint Validation
 <details>
 <summary><strong>Python Linter Validation</strong></summary>
 
-Python Linter Validation
-![Python Linter Test](readme/testing/python-linter.png)
+
+To fix and refactor my code I used the recommended **Flake8** to refine my python code.
+The remaining errors is code I can't change and supposed to be there.
+
+| Python           |    W3C Screnshot                                     |             
+| -----------------|------------------------------------------------------|
+| Flake8           |  ![Flake8](readme/testing/flake8.png)                |
+
+
 </details>
 
 
 ### Unsolved Bugs
 
+
+- No unsolved bugs.
 
 
 ## DEPLOYMENT
