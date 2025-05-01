@@ -246,7 +246,24 @@ During development, testing was conducted primarily on Google Chrome. In product
 <summary><strong>HTML Validation</strong></summary>
 
 HTML Validation
-![HTML Test](readme/testing/htmltest.png)
+I used the recommended [HTML W3C Validator](https://validator.w3.org/nu) to validate all of my HTML pages.
+
+| Page             |    W3C Screnshots                                    |             
+| -----------------|------------------------------------------------------|
+| Home             |  ![alt text](media/image-1.png)                      |
+| Products         |  ![alt text](media/image-1.png)                      |            
+| Product Detail   |  ![alt text](media/image-1.png)                      |
+| FAQ              |  ![alt text](media/image-1.png)                      |
+| Contact          |  ![alt text](media/image-1.png)                      |
+| About Us         |  ![alt text](media/image-1.png)                      |
+| Register         |  ![alt text](media/image-1.png)                      |
+| Login            |  ![alt text](media/image-1.png)                      |
+| Profile          |  ![alt text](media/cont.png)                         |
+| Bag              |  ![alt text](media/cont.png)                         |
+| Add Review       |  ![alt text](media/eva1.png)                         |
+| Checkout         |  ![alt text](media/eva1.png)                         |
+| Product Manage   |  ![alt text](media/eva1.png)                         |
+
 </details>
 
 #### W3C CSS Jigsaw Validator
