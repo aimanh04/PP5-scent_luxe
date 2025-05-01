@@ -392,4 +392,16 @@ To clone this repository, do the following steps:
 
 ### Other students projects
 
-I took inspiration from other students who made a similar project to mine
+I took alot of inspiration from other students who made a similar project to mine
+
+* Loveflowers.IE by Conal2023
+[Loveflowers.IE | (https://loveflowers-conal-4ff1b669baa9.herokuapp.com/)](https://loveflowers-conal-4ff1b669baa9.herokuapp.com/ "Loveflowers.IE | (https://loveflowers-conal-4ff1b669baa9.herokuapp.com/)")
+
+* Bake Me Happy by Sarah-bue    
+[Bake Me Happy | (https://bake-me-happy-b9b73285e6cc.herokuapp.com/)](https://bake-me-happy-b9b73285e6cc.herokuapp.com/ "Bake Me Happy | (https://bake-me-happy-b9b73285e6cc.herokuapp.com/)")
+
+* Boutique Shop by BadrAlioui    
+[Boutique Shop | (https://boutique-shop-9cbda2d44e62.herokuapp.com/)](https://boutique-shop-9cbda2d44e62.herokuapp.com/ "Boutique Shop | (https://boutique-shop-9cbda2d44e62.herokuapp.com/)")
+
+* Little Plant Shop by AtsukoCoffey   
+[AtsukoCoffey | (https://little-plant-shop-e08318b823f1.herokuapp.com/)](https://little-plant-shop-e08318b823f1.herokuapp.com/ "AtsukoCoffey | (https://little-plant-shop-e08318b823f1.herokuapp.com/)")
