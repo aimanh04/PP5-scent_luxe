@@ -32,7 +32,7 @@ Users can browse products, leave reviews, manage their accounts, and complete pu
 
 <img src="readme/features//agile.png" alt="Agile Methodology">
 </details>
-The Healthy Recipes project followed Agile methodology, using iterative sprints to prioritize key features and improve based on user feedback. The MoSCoW method helped classify features, ensuring core functionalities like browsing, authentication, and recipe management were developed first. Continuous testing and refinements kept the platform user-friendly and responsive.
+The ScentLuxe project followed Agile methodology, using iterative sprints to prioritize key features and improve based on user feedback. The MoSCoW method helped classify features, ensuring core functionalities like browsing, authentication, and recipe management were developed first. Continuous testing and refinements kept the platform user-friendly and responsive.
 
 #### MoSCoW
 
@@ -87,13 +87,209 @@ This project applied the MoSCoW prioritization technique to categorize its featu
 ### Blog Features
 
 <details> 
-<summary><strong>Menu Bar</strong></summary>
+<summary><strong>Nav Bar</strong></summary>
 
-![Menu Bar](readme/features/menu-loggedin.png)
+![Nav Bar](readme/features/navbar.png)
 </details>
 
-- For a visiting user the menu bar consists of Home, All Products, FAQ, Contact, 
-About Us, My Account with Sign-up and Log-in pages, and shopping bag.
+
+- Displays links like **Home**, **Shop**, **About**, **Contact**, and **FAQ**.
+- Shows **Login/Sign Up** or **Profile/Logout** based on user status.
+- Admins see an extra **Product Management** link.
+- Includes a responsive search bar, cart icon, and clickable ScentLuxe logo.
+
+
+<details>
+<summary><strong>Home Page</strong></summary>
+
+![Home Page](readme/features/home-page.png)
+</details>
+
+
+- Features a full-width hero image with a call-to-action ("Shop Now") button.
+- Highlights the brand’s message: “Discover the finest and most luxurious candles.”
+- Includes a persistent free shipping banner above the main content.
+- Clicking "Shop Now" redirects users directly to the product listing page.
+
+
+<details> 
+<summary><strong>All Products Page</strong></summary>
+
+![All Products Page](readme/features/all-products.png)
+</details>
+
+
+- Displays all products in a responsive grid layout with consistent spacing and styling.
+- Each item shows a product image, name, price, and clickable link to the detail page.
+- Includes filter functionality by category (e.g., Candles, Diffusers, Gifts & Bundles).
+- Allows users to sort by price or category using a dropdown.
+- A search bar is available to find products by name or keyword.
+
+
+<details> 
+<summary><strong>Product Detail Page</strong></summary>
+
+![Product Detail Page](readme/features/product-detail.png)
+</details>
+
+
+- Shows detailed information including product image, name, description, and price.
+- Allows users to select a quantity and add the item to their shopping bag.
+- Displays the average user rating based on submitted reviews.
+- Authenticated users can submit a review with a rating, title, and message.
+- All submitted reviews are visible below the product, including the reviewer name and date.
+- Admin users can edit or delete the product from the admin panel if needed.
+
+
+<details> 
+<summary><strong>Review System</strong></summary>
+
+![Review System](readme/features/review-system.png)
+</details>
+
+
+- Logged-in users can submit reviews directly from the product detail page.
+- Reviews include a star rating, title, and written feedback.
+- The median rating is automatically calculated and displayed on each product.
+- Users can view all reviews, including submission date and reviewer username.
+- Users can delete their own reviews from the profile page.
+- Admins can view and delete any review via the admin panel.
+
+
+<details> 
+<summary><strong>FAQ Page</strong></summary>
+
+![FAQ Page](readme/features/faq-page.png)
+</details>
+
+
+- Organized into collapsible accordion sections for easy navigation.
+- Covers common topics like Candles, Orders & Shipping.
+- Questions expand smoothly to reveal detailed answers without reloading the page.
+
+
+<details> 
+<summary><strong>Contact Page</strong></summary>
+
+![Contact Page](readme/features/contact-page.png)
+</details>
+
+
+- Features a clean and responsive contact form with fields for name, email, and message.
+- Uses Django forms and CSRF protection for secure submissions.
+- Submits user inquiries directly to the admin panel.
+- Displays success or error messages to confirm form status.
+
+
+<details> 
+<summary><strong>About Page</strong></summary>
+
+![About Page](readme/features/about-page.png)
+</details>
+
+
+- Provides background on the ScentLuxe brand and its purpose.
+- Highlights the project creator and development context (Portfolio Project 5).
+- Includes a high-quality logo image to reinforce brand identity.
+- Clean, centered layout with responsive formatting for all screen sizes.
+
+
+<details> 
+<summary><strong>Profile Page</strong></summary>
+
+![Profile Page](readme/features/profile-page.png)
+</details>
+
+
+- Displays the user's saved delivery details, which can be updated via a secure form.
+- Lists all past orders with links to view order history and details.
+- Shows all reviews written by the user, including the product name and date.
+- Users can delete their own reviews directly from this page.
+- Access restricted to logged-in users only.
+
+
+<details> 
+<summary><strong>Shopping Bag</strong></summary>
+
+![Shopping Bag](readme/features/shopping-bag.png)
+</details>
+
+
+- Displays a summary of all items the user has added to their bag.
+- Shows product image, name, price, quantity, and subtotal.
+- Users can update item quantities or remove items entirely.
+- Automatically calculates total cost and delivery fees.
+- Bag total is visible at all times in the navigation bar.
+
+
+<details> 
+<summary><strong>Checkout Page</strong></summary>
+
+![Checkout Page](readme/features/checkout-page.png)
+</details>
+
+
+- Users can securely enter their delivery and payment information.
+- Integrated with **Stripe** for handling credit/debit card payments.
+- Authenticated users can save their info for faster future checkouts.
+- Displays an order summary, including items, quantities, and totals.
+- Validates form fields and provides real-time feedback for errors.
+
+
+<details> 
+<summary><strong>Checkout Success Page</strong></summary>
+
+![Checkout Success Page](readme/features/checkout-success.png)
+</details>
+
+
+- Confirms that the user’s order was placed successfully.
+- Displays a full order summary with product details, prices, and delivery address.
+- Shows the email used for confirmation and notifies that a receipt has been sent.
+- Logged-in users can view this order again from their profile page.
+
+
+<details> 
+<summary><strong>Sign-Up/Register Page</strong></summary>
+
+![Sign-Up Page](readme/features/sign-up-page.png)
+</details>
+
+
+- New users can register by entering their email, username, and password.
+- Includes email confirmation and password validation for added security.
+- Users are redirected to the homepage upon successful registration.
+- Once signed up, users can access profile features, leave reviews, and place orders.
+
+
+<details> 
+<summary><strong>Sign-In Page</strong></summary>
+
+![Sign-In Page](readme/features/sign-in-page.png)
+</details>
+
+
+- Allows users to log in using their email or username and password.
+- Includes a "Remember Me" option for persistent sessions.
+- Provides links to sign up for new users and reset password if forgotten.
+- Successful login redirects users to the homepage or their intended destination.
+
+
+<details> 
+<summary><strong>Footer</strong></summary>
+
+![Footer](readme/features/footer.png)
+</details>
+
+
+- Includes a “Stay in Touch” section with links for social engagement.
+- Offers a Mailchimp-powered subscription form for email newsletter sign-up.
+- Encourages users to follow ScentLuxe on Facebook for updates and promotions.
+- Fully responsive layout styled to match the brand’s color scheme.
+
+
+
+## WEB MARKETING
 
 
 ## CODE TECHNOLOGIES USED
@@ -105,18 +301,15 @@ About Us, My Account with Sign-up and Log-in pages, and shopping bag.
 - JavaScript
 - CSS
 
-### Databases
-
-- PostgreSQL from Code Institute was used as the PostgreSQL database for this project.
 
 ### Frameworks, Libraries and Programes used
 
 - [GitHub](https://GitHub.com/) - To save and store files for the project
-- [Gitpod](https://gitpod.io/) - To use as workspace to code project
 - [VSCode](https://code.visualstudio.com) - Used as workspace for my project
 - [Am I Responsive](https://techsini.com/multi-mockup/index.php) - Used to test responsivness
 - [PEP8 CI Python Linter](https://pep8ci.herokuapp.com/) - Used to validate my python code.
 - [Heroku](https://dashboard.heroku.com/) - Used to deploy project.
+- [Amazon-AWS](https://aws.amazon.com/) - was used host all static and media files for the site.
 - [Chrome Devtools](https://developer.chrome.com/docs/devtools) - Used throughout the process to find bugs and test responsiveness on website
 - [JSHint](https://jshint.com/) - To validate JavaScript code
 - [W3C Markup Validation](https://validator.w3.org/) - To validate HTML code
@@ -251,21 +444,21 @@ During development, testing was conducted primarily on Google Chrome. In product
 
 I used the recommended [HTML W3C Validator](https://validator.w3.org/nu) to validate all of my HTML pages.
 
-| Page             |    W3C Screnshots                                    |             
-| -----------------|------------------------------------------------------|
-| Home             |  ![Home Page](readme/testing/home-testing.png)       |
-| Products         |  ![Products](readme/testing/products-testing.png)    |            
-| Product Detail   |  ![Product Page](readme/testing/product-page.png)    |
-| FAQ              |  ![FAQ Page](readme/testing/faq-testing.png)         |
-| Contact          |  ![Contact Page](readme/testing/contact-testing.png) |
-| About Us         |  ![About Page](readme/testing/about-testing.png)     |
-| Register         |  ![Register Page](readme/testing/signup-testing.png) |
-| Login            |  ![Login Page](readme/testing/login-testing.png)     |
-| Profile          |  ![Profile Page](readme/testing/profile-testing.png) |
-| Bag              |  ![Bag Page](readme/testing/bag-testing.png)         |
-| Add Review       |  ![Add Review Page](readme/testing/add-reviews.png)  |
-| Checkout         |  ![Checkout Page](readme/testing/checkout-test.png)  |
-| Product Manage   |  ![Product Manage](readme/testing/product-add.png)   |
+| Page             |    W3C Screnshots                                         |             
+| -----------------|-----------------------------------------------------------|
+| Home             |  ![Home Page](readme/testing/home-testing.png)            |
+| Products         |  ![Products](readme/testing/products-testing.png)         |            
+| Product Detail   |  ![Product Page](readme/testing/product-page.png)         |
+| FAQ              |  ![FAQ Page](readme/testing/faq-testing.png)              |
+| Contact          |  ![Contact Page](readme/testing/contact-testing.png)      |
+| About Us         |  ![About Page](readme/testing/about-testing.png)          |
+| Register         |  ![Register Page](readme/testing/signup-testing.png)      |
+| Login            |  ![Login Page](readme/testing/login-testing.png)          |
+| Profile          |  ![Profile Page](readme/testing/profile-testing.png)      |
+| Bag              |  ![Bag Page](readme/testing/bag-testing.png)              |
+| Add Review       |  ![Add Review Page](readme/testing/add-reviews.png)       |
+| Checkout         |  ![Checkout Page](readme/testing/checkout-test.png)       |
+| Product Manage   |  ![Product Manage](readme/testing/product-add.png)        |
 
 </details>
 
@@ -277,12 +470,12 @@ I used the recommended [HTML W3C Validator](https://validator.w3.org/nu) to vali
 
 I used the recommended [CSS W3C Validator](https://validator.w3.org/nu) to validate all of my CSS Files.
 
-| CSS             |    W3C Screnshots                                     |             
-| -----------------|------------------------------------------------------|
-| Base.CSS         |  ![Base](readme/testing/base-css.png)                |
-| Profile.CSS      |  ![Profile](readme/testing/profile-css.png)          |            
-| FAQ.CSS          |  ![FAQ](readme/testing/faq-css.png)                  |
-| Checkout.CSS     |  ![Checkout](readme/testing/checkout-css.png)        |
+| CSS              |    W3C Screnshots                                     |             
+| -----------------|-------------------------------------------------------|
+| Base.CSS         |  ![Base](readme/testing/base-css.png)                 |
+| Profile.CSS      |  ![Profile](readme/testing/profile-css.png)           |            
+| FAQ.CSS          |  ![FAQ](readme/testing/faq-css.png)                   |
+| Checkout.CSS     |  ![Checkout](readme/testing/checkout-css.png)         |
 
 
 </details>
@@ -315,6 +508,22 @@ The remaining errors is code I can't change and supposed to be there.
 | Python           |    W3C Screnshot                                     |             
 | -----------------|------------------------------------------------------|
 | Flake8           |  ![Flake8](readme/testing/flake8.png)                |
+
+
+</details>
+
+
+#### Stripe Payments
+
+<details>
+<summary><strong>Stripe Validation</strong></summary>
+
+**Stripe** was just as a payment system and here are screenshots of the payment system working.
+
+| Stripe           |    Stripe Screenshot                                                |             
+| -----------------|---------------------------------------------------------------------|
+| Stripe Success   | ![Stripe Success](readme/testing/stripe-success.png)                |
+| Stripe Failed    | ![Stripe Failed](readme/testing/stripe-failed.png)                  |
 
 
 </details>
@@ -375,9 +584,13 @@ To clone this repository, do the following steps:
 
 ### Imagery
 
+
+
 ### Special Thanks To
 
 - **Boutique Ado** This walkthrough was heavily relied upon my project due to time constraint and was extremily helpful. However, I did remake the design and made it my own.
+
+- [LuxurySparkle](https://www.luxurysparkleco.com/) - This website was my original inspiration for wanting to make a candle website and I also give all the credit to them for their products because I used their imagery and products for my project.
 
 - **Code Institute** for providing the foundational python knowledge.
 
