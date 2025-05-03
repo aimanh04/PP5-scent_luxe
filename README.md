@@ -76,9 +76,51 @@ This project applied the MoSCoW prioritization technique to categorize its featu
 
 ### Color Scheme
 
+
 ![Color Scheme](readme/features/palette.png)
 
+
 ### Database Models
+
+#### 1. User Model
+- Django AllAuth handles authentication, registration, and login functionalities.
+- Each user can leave product reviews and access a personalized profile page.
+- The model integrates with the Order and Review models via one-to-many relationships.
+
+#### 2. Product Model
+- Stores all product data including name, description, price, image, category, and slug.
+- Each product can receive multiple reviews and is tied to one category.
+- Admins can perform full CRUD operations through the admin panel.
+
+#### 3. Category Model
+- Organizes products into categories such as Candles, Diffusers, and Gift Bundles.
+- Used for filtering and displaying products on the front end.
+- Each category can contain multiple products.
+
+#### 4. Review Model
+- Registered users can submit reviews and star ratings for products.
+- Each review is linked to a specific product and user.
+- Reviews dynamically update a product’s average rating on the front end.
+
+#### 5. Order & Order Line Item Models
+- Track user purchases and shopping cart items.
+- Store billing details, product quantities, and Stripe payment references.
+- Connected to the User and Product models for order history and fulfillment.
+
+#### 6. Contact Model
+- Allows users to send inquiries via a frontend contact form.
+- Fields include name, email, and message body.
+- Messages are stored in the admin panel for review and response.
+
+#### 7. FAQ Model
+- Contains categorized frequently asked questions for display on the FAQ page.
+- Admins can add, edit, or remove questions using the admin dashboard.
+- Questions are grouped under tags like Candles or Shipping.
+
+#### 8. About Model
+- Displays brand background and project origin details on the About Us page.
+- Editable only by superusers via the admin interface.
+- Includes a description, image, and header fields.
 
 
 
@@ -314,8 +356,9 @@ This project applied the MoSCoW prioritization technique to categorize its featu
 - [JSHint](https://jshint.com/) - To validate JavaScript code
 - [W3C Markup Validation](https://validator.w3.org/) - To validate HTML code
 - [W3C CSS Validation](https://jigsaw.w3.org/css-validator/) - To validate CSS code
-- [Pexels](https://www.pexels.com/) - For Hero image
+- [Pexels](https://www.pexels.com/) - For Landing page image
 - [Bootstrap](https://getbootstrap.com) - Used to style website and add better responsiveness and interactivity
+- [Coolors](https://coolors.co/) - To create color palette
 
 
 ### Installed Django & Essential Packages
@@ -444,21 +487,21 @@ During development, testing was conducted primarily on Google Chrome. In product
 
 I used the recommended [HTML W3C Validator](https://validator.w3.org/nu) to validate all of my HTML pages.
 
-| Page             |    W3C Screnshots                                         |             
-| -----------------|-----------------------------------------------------------|
-| Home             |  ![Home Page](readme/testing/home-testing.png)            |
-| Products         |  ![Products](readme/testing/products-testing.png)         |            
-| Product Detail   |  ![Product Page](readme/testing/product-page.png)         |
-| FAQ              |  ![FAQ Page](readme/testing/faq-testing.png)              |
-| Contact          |  ![Contact Page](readme/testing/contact-testing.png)      |
-| About Us         |  ![About Page](readme/testing/about-testing.png)          |
-| Register         |  ![Register Page](readme/testing/signup-testing.png)      |
-| Login            |  ![Login Page](readme/testing/login-testing.png)          |
-| Profile          |  ![Profile Page](readme/testing/profile-testing.png)      |
-| Bag              |  ![Bag Page](readme/testing/bag-testing.png)              |
-| Add Review       |  ![Add Review Page](readme/testing/add-reviews.png)       |
-| Checkout         |  ![Checkout Page](readme/testing/checkout-test.png)       |
-| Product Manage   |  ![Product Manage](readme/testing/product-add.png)        |
+| Page             |    W3C Screnshots                                              |             
+| -----------------|----------------------------------------------------------------|
+| Home             |  ![Home Page](readme/testing/home-testing.png)                 |
+| Products         |  ![Products](readme/testing/products-testing.png)              |            
+| Product Detail   |  ![Product Page](readme/testing/product-page.png)              |
+| FAQ              |  ![FAQ Page](readme/testing/faq-testing.png)                   |
+| Contact          |  ![Contact Page](readme/testing/contact-testing.png)           |
+| About Us         |  ![About Page](readme/testing/about-testing.png)               |
+| Register         |  ![Register Page](readme/testing/signup-testing.png)           |
+| Login            |  ![Login Page](readme/testing/login-testing.png)               |
+| Profile          |  ![Profile Page](readme/testing/profile-testing.png)           |
+| Bag              |  ![Bag Page](readme/testing/bag-testing.png)                   |
+| Add Review       |  ![Add Review Page](readme/testing/add-reviews.png)            |
+| Checkout         |  ![Checkout Page](readme/testing/checkout-test.png)            |
+| Product Manage   |  ![Product Manage](readme/testing/product-add.png)             |
 
 </details>
 
@@ -520,10 +563,10 @@ The remaining errors is code I can't change and supposed to be there.
 
 **Stripe** was just as a payment system and here are screenshots of the payment system working.
 
-| Stripe           |    Stripe Screenshot                                                |             
-| -----------------|---------------------------------------------------------------------|
-| Stripe Success   | ![Stripe Success](readme/testing/stripe-success.png)                |
-| Stripe Failed    | ![Stripe Failed](readme/testing/stripe-failed.png)                  |
+| Stripe           |    Stripe Screenshot                                                   |             
+| -----------------|------------------------------------------------------------------------|
+| Stripe Success   | ![Stripe Success](readme/testing/stripe-success.png)                   |
+| Stripe Failed    | ![Stripe Failed](readme/testing/stripe-failed.png)                     |
 
 
 </details>
