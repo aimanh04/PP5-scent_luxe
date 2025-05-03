@@ -334,6 +334,24 @@ This project applied the MoSCoW prioritization technique to categorize its featu
 ## WEB MARKETING
 
 
+### Marketing Strategy
+
+To strengthen ScentLuxe’s online presence, a dedicated Facebook page was launched. As a luxury candle brand, ScentLuxe benefits from consistent, visually appealing posts, user engagement through story polls and comment replies, and occasional giveaways to attract new customers and re-engage returning ones.
+
+![Facebook Page](readme/features/facebook-page.png)
+
+
+### SEO (Search Engine Optimization)
+
+Improving the discoverability of a website on search engines is essential for reaching the right audience. SEO helps ensure that users searching for relevant products or topics can easily find the site.
+
+For ScentLuxe, the following actions were taken to optimize search performance:
+
+- Custom meta tags were crafted for the page, including clear and relevant descriptions and keywords that align with luxury candles and home fragrance products.
+- A sitemap was generated using [XML Sitemaps](https://www.xml-sitemaps.com/), highlighting the site’s key pages to assist search engines in indexing them efficiently.
+- A `robots.txt` file was added to define which parts of the site are accessible to search engine bots and which areas should be ignored during crawling.
+
+
 ## CODE TECHNOLOGIES USED
 
 ### Languages
