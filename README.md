@@ -599,30 +599,168 @@ The remaining errors is code I can't change and supposed to be there.
 ## DEPLOYMENT
 
 ### Steps for deployment on Heroku
-1. Go to the [Heroku](https://dashboard.heroku.com/) website.
-2. Click on the "Create new app" option on the dashboard.
-3. Give it your project name, select your region and go on the "Create app" option.
-4. Click the settings tab.
-5. Go to "Reveal Config Vars" and store all your sensitive data such as creds.json & port data.
-6. Set the buildbacks to Python & Nodejs in that order.
-7. Click on the deploy tab.
-8. Select Github as a deployment method.
-9. Connect it to your Github.
-10. Authorize the correct repo to connect.
-11. Choose to either "Enable Automatic" or on "Deploy Branch" to deploy the project.
-12. Go on "View" to see your live project.
+ScentLuxe is deployed on [Heroku](https://www.heroku.com), a cloud-based platform that simplifies building and managing applications online.
+
+#### Initial Setup
+1. Log in to your Heroku dashboard and click **New → Create New App**.
+2. Choose a globally unique name and select your preferred region (Europe or United States).
+3. After creating the app, go to the **Settings** tab and click **Reveal Config Vars**.
+
+#### Required Config Vars
+
+Set the following environment variables using your own values:
+
+| Key                 | Value                |
+|---------------------|----------------------|
+| `AWS_ACCESS_KEY_ID` | your AWS key         |
+| `AWS_SECRET_ACCESS_KEY` | your AWS secret key |
+| `DATABASE_URL`      | your database URI    |
+| `EMAIL_HOST_USER`   | email host user      |
+| `EMAIL_HOST_PASS`   | email host password  |
+| `SECRET_KEY`        | Django secret key    |
+| `STRIPE_PUBLIC_KEY` | Stripe publishable key |
+| `STRIPE_SECRET_KEY` | Stripe secret key    |
+| `STRIPE_WH_SECRET`  | Stripe webhook secret |
+
+#### Prepare for Deployment
+
+Make sure these files exist in your project root:
+
+- `requirements.txt` — lists all required Python packages  
+- `Procfile` — tells Heroku how to run your app
+
+To create a `Procfile`, run the following command in your terminal:
+
+```bash
+echo web: gunicorn your_project_name.wsgi > Procfile
+```
+
+Replace `your_project_name` with the name of your main Django project folder (the one containing `settings.py`).
+
+---
+
+To deploy your project to Heroku:
+
+1. Open the **Deploy** tab in your Heroku dashboard.
+2. Connect your GitHub repository under **Deployment Method**.
+3. You can choose one of the following options:
+
+- Enable **Automatic Deploys** to have Heroku deploy every time you push changes to GitHub.
+
+**OR**
+
+- Deploy manually using the Heroku CLI:
+
+```bash
+heroku git:remote -a your-app-name
+git add .
+git commit -m "Prepare for Heroku deployment"
+git push heroku main
+```
+
+Once completed, your app will be live and hosted via Heroku.
 
 
 ### Stripe API
 
+ScentLuxe uses [Stripe](https://stripe.com) as its payment gateway to process transactions safely and reliably.
+
+To link your Stripe account with the application:
+
+- Log in to your Stripe dashboard and navigate to the **Developers** section.
+- Under **API Keys**, locate the following:
+  - `STRIPE_PUBLIC_KEY`: This is the publishable key used on the frontend (starts with `pk`).
+  - `STRIPE_SECRET_KEY`: This private key is used on the backend to complete transactions (starts with `sk`).
+
+To ensure payment confirmation even if the checkout page is closed before the process completes, Stripe Webhooks are used:
+
+- Go to **Developers → Webhooks** and click **+ Add Endpoint**.
+- Enter your live site’s URL followed by `/checkout/wh/` as the endpoint.
+- Choose the option to listen for all event types (or just essential ones like `checkout.session.completed`).
+- Once created, Stripe will generate a **Signing Secret**:
+  - `STRIPE_WH_SECRET`: This value begins with `wh` and is used to securely validate incoming webhook requests.
+
+These keys are stored securely in environment variables and never exposed in the codebase.
+
 
 ### Gmail API
+
+ScentLuxe uses [Gmail](https://mail.google.com) to send order confirmations and account-related emails.
+
+To connect your Gmail account:
+
+1. Log into your Gmail and go to **Google Account → Security**.
+2. Enable **2-Step Verification** (if not already active).
+3. After enabling, a new option called **App Passwords** will appear.
+4. Click **App Passwords** and re-authenticate if prompted.
+5. For the app type, choose **Mail**.
+6. For device, select **Other**, and enter a custom name (e.g., "Django").
+7. Google will generate a 16-character password — this is your app-specific Gmail key.
+
+Use the following in your environment variables:
+
+- `EMAIL_HOST_USER` = your Gmail address  
+- `EMAIL_HOST_PASS` = the 16-character app password  
 
 
 ### Amazon S3
 
+ScentLuxe uses **Amazon S3** to host static and media files in the cloud.
 
-### Amazon IAM
+#### 1. Create Your AWS Bucket
+- Visit [aws.amazon.com](https://aws.amazon.com/) and sign in or create an account.
+- In the AWS Console, search for **S3** and click **Create bucket**.
+- Name the bucket (e.g., `scentluxe-assets`) and select your preferred region.
+- Uncheck **Block all public access** so files can be accessed by the front end.
+- Acknowledge the warning and create the bucket.
+
+#### 2. Set Up Permissions
+- Open your bucket → go to the **Permissions** tab.
+- Add a **Bucket Policy** and configure **CORS** settings if needed for media delivery.
+
+#### 3. Install Required Packages
+
+```bash
+pip3 install boto3 django-storages
+```
+
+#### 4. Configure `settings.py`
+
+```python
+AWS_STORAGE_BUCKET_NAME = 'your-bucket-name'
+AWS_S3_REGION_NAME = 'your-region'
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
+STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
+MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
+
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+```
+
+Make sure `'storages'` is in your `INSTALLED_APPS`.
+
+#### 5. Add AWS Keys to Heroku
+
+Add these to your **Config Vars**:
+
+| Key                   | Value                     |
+|------------------------|---------------------------|
+| `AWS_ACCESS_KEY_ID`     | your AWS access key        |
+| `AWS_SECRET_ACCESS_KEY` | your AWS secret key        |
+| `USE_AWS`               | True                       |
+
+#### 6. Upload Your Files
+
+Run the following to push static/media files to S3:
+
+```bash
+python manage.py collectstatic
+```
+
+Your assets are now hosted and served from Amazon S3.
 
 
 ### Forking the Github Repository
@@ -645,6 +783,9 @@ To clone this repository, do the following steps:
 
 ### Imagery
 
+Thanks to [LuxurySparkle](https://www.luxurysparkleco.com/) for the inspiration. All product images used came from this store.
+
+Thanks to [Pexels](https://www.pexels.com/) for the landing page image.
 
 
 ### Special Thanks To
